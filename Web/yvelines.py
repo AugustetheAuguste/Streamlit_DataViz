@@ -298,13 +298,9 @@ def app():
     bar_chart = px.bar(top_5_voie, x='Type de voie', y='Valeur fonciere', title="Top 5 des types de voie par valeur foncière cumulée")
 
     # Utilisation de st.columns pour afficher les graphiques côte à côte
-    col1, col2 = st.columns(2)
+   
 
-    with col1:
-        st.plotly_chart(fig_voie_pie, use_container_width=True)
-
-    with col2:
-        st.plotly_chart(bar_chart, use_container_width=True)
+    st.plotly_chart(bar_chart, use_container_width=True)
 
 
 
