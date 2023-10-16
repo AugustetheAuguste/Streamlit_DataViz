@@ -1,17 +1,12 @@
 pip==23.3
-
-
-import streamlit as st
-import numpy as np
-import plotly.express as px
-import pydeck as pdk
-import folium
-from folium.plugins import MarkerCluster
-from streamlit_folium import folium_static
-import matplotlib.pyplot as plt
-import bar_chart_race as bcr
-import pandas as pd
-import plotly.graph_objects as go
-import altair as alt
-from folium.plugins import FastMarkerCluster
-import seaborn as sns
+streamlit
+numpy
+plotly
+pydeck
+folium
+streamlit_folium
+matplotlib
+bar_chart_race
+pandas
+altair
+seaborn
