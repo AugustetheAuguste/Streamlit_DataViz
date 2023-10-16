@@ -22,10 +22,17 @@ def app():
 
     @st.cache_data
 
-    def load_data():
-        # Charger les données du subset_78 ici, par exemple depuis un fichier CSV
-        return pd.read_json('Datasets/finished_subset_lyon_surrounding_all_years.jsonl', lines = True)
-    df = load_data()
+    def load_data(option):
+
+        if option == 1:
+            # Charger les données du subset_78 ici, par exemple depuis un fichier CSV
+            return pd.read_json('Datasets/finished_subset_lyon_surrounding_all_years.jsonl', lines = True)
+        else:
+            return pd.read_json('Datasets/finished_subset_lyon_surrounding_all_years_2.jsonl', lines = True)
+    
+    df_1 = load_data(1)
+    df_2 = load_data(2)
+    df_combined = pd.concat([df_1, df_2], ignore_index=True)
     df = df.dropna(subset=['latitude', 'longitude'])
 
     selected_year = st.sidebar.slider("Sélectionnez une année:", min_value=2018, max_value=2022)
