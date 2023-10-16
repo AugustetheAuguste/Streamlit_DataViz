@@ -249,14 +249,6 @@ def app():
     ############################################
     ############################################
 
-    # Pie Chart pour les 5 types de voies les plus fréquents
-    df_voie = df_year['Type de voie'].value_counts().reset_index().nlargest(5, 'Type de voie')
-    df_voie.columns = ['Type de voie', 'Count']
-    fig_voie_pie = px.pie(df_voie, names='Type de voie', values='Count', title='5 types de voies les plus fréquents')
-    
-    
-
-    
     ############################################
     ############################################
 
