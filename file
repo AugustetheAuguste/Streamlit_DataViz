@@ -1,0 +1,44 @@
+
+# Graphe : Nbr de mutations par année
+st.subheader("Nombre de mutations par année et par nature")
+df_grouped_year_nature = df.groupby(['Year', 'Nature mutation']).size().reset_index(name='Counts')
+
+fig = px.sunburst(df_grouped_year_nature, path=['Year', 'Nature mutation'], values='Counts')
+fig.update_layout(title="Sunburst: Nbr de mutations par année et par nature de mutation")
+st.plotly_chart(fig)
+
+# Nature de mutation la plus fréquente
+st.subheader("Nature de mutation la plus fréquente")
+most_common_nature = df['Nature mutation'].value_counts().idxmax()
+st.write(f"La nature de mutation la plus fréquente est : {most_common_nature}")
+
+# Graphe : Nature de mutation la plus fréquente par année
+st.subheader("Nature de mutation la plus fréquente par année")
+most_common_nature_per_year = df.groupby('Year')['Nature mutation'].apply(lambda x: x.value_counts().idxmax()).reset_index()
+
+fig = px.bar(most_common_nature_per_year, x='Year', y='Nature mutation', title="Nature de mutation la plus fréquente par année")
+st.plotly_chart(fig)
+
+# Corrélation entre la nature de la mutation et la valeur foncière
+st.subheader("Corrélation entre la nature de la mutation et la valeur foncière")
+correlation_matrix = df[['Nature mutation', 'Valeur fonciere']].pivot(columns='Nature mutation', values='Valeur fonciere').corr()
+st.write(correlation_matrix)
+
+
+# Analysis of DVF in Paris
+st.subheader("3. Analysis of DVF in Paris (For my brother)")
+st.write("Introduction to the Paris analysis...")
+# Insert your graphs and other content here
+st.write("Conclusion for the Paris analysis...")
+
+# Analysis of DVF in Maisons-Laffite
+st.subheader("4. Analysis of DVF in Maisons-Laffite and surrounding areas (For my friends)")
+st.write("Introduction to the Maisons-Laffite analysis...")
+# Insert your graphs and other content here
+st.write("Conclusion for the Maisons-Laffite analysis...")
+
+# Analysis of DVF in Lyon
+st.subheader("5. Analysis of DVF in Lyon (For my parents)")
+st.write("Introduction to the Lyon analysis...")
+# Insert your graphs and other content here
+st.write("Conclusion for the Lyon analysis...")
