@@ -16,7 +16,7 @@ def app():
         st.markdown("<h2 style='font-size: 45px;'>Introduction 📖</h2>", unsafe_allow_html=True)
         st.markdown("<p style='font-size: 18px;'>Bienvenue dans l'analyse des valeurs foncières. Dans les Yvelines, près de la ville de Maisons-Laffitte et dans le département Rhône-Alpes, autour de Lyon. Pourquoi s'intéresser aux valeurs immobilières et spécifiquement à ces endroits ? C'est très simple. En effet, je suis lyonnais, né dans le 4e arrondissement de Lyon. J'y ai vécu pendant 9 ans avant de déménager à New York, puis de revenir à Paris. Aujourd'hui, mes parents souhaitent retourner à Lyon et vendre notre maison parisienne. Fort de mes compétences en data science et en data visualisation, j'estime pouvoir les aider à prendre des décisions éclairées afin de vendre notre maison à un prix juste et de mieux comprendre le marché immobilier local. Nous aborderons également l'analyse du marché immobilier à Lyon pour les orienter vers des communes présentant des offres potentiellement intéressantes.</p>", unsafe_allow_html=True)
     with col2:
-        st.image("Images\House.jpg", caption="Légende de l'image si nécessaire", use_column_width=True)
+        st.image("../Images/House.jpg", caption="Légende de l'image si nécessaire", use_column_width=True)
 
     # Table des matières
     st.markdown("<h2 style='font-size: 45px;'>Table des Matières 📑</h2>", unsafe_allow_html=True)
