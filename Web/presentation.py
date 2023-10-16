@@ -49,13 +49,13 @@ def app():
     def load_data(option):
         if option == 1:
         # Charger les données du subset_78 ici, par exemple depuis un fichier CSV
-            return pd.read_json('Datasets\subset_78_all_years.jsonl', lines = True)
+            return pd.read_json('Datasets/subset_78_all_years.jsonl', lines = True)
         
         if option == 2:
-            return pd.read_json('Datasets\subset_specified_all_years.jsonl', lines = True)
+            return pd.read_json('Datasets/subset_specified_all_years.jsonl', lines = True)
         
         if option == 3:
-            return pd.read_json('Datasets\\finished_subset_lyon_surrounding_all_years.jsonl', lines = True)
+            return pd.read_json('Datasets/finished_subset_lyon_surrounding_all_years.jsonl', lines = True)
         
     df_78 = load_data(1)
     df_ML = load_data(2)
