@@ -20,10 +20,18 @@ def app():
 
     @st.cache_data
 
-    def load_data():
-        # Charger les données du subset_78 ici, par exemple depuis un fichier CSV
-        return pd.read_json('Datasets/subset_78_all_years.jsonl', lines = True)
-    df = load_data()
+    def load_data(option):
+        if option == 1:
+            # Charger les données du subset_78 ici, par exemple depuis un fichier CSV
+            return pd.read_json('Datasets/subset_78_all_years.jsonl', lines = True)
+        else:
+            return pd.read_json('Datasets/subset_78_all_years_2.jsonl', lines = True)
+
+    
+    df_1 = load_data(1)
+    df_2 = loaf_data(2)
+    df_combined = pd.concat([df_1, df_2], ignore_index=True)
+    df = df.dropna(subset=['latitude', 'longitude'])
 
     
 
