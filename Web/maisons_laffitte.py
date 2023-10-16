@@ -23,7 +23,7 @@ def app():
 
     def load_data():
         # Charger les données du subset_78 ici, par exemple depuis un fichier CSV
-        return pd.read_json('Datasets\subset_specified_all_years.jsonl', lines = True)
+        return pd.read_json('Datasets/subset_specified_all_years.jsonl', lines = True)
     df = load_data()
 
     # Calculer le nombre total de mutations
